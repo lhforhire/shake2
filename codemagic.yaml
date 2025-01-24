@@ -1,18 +1,17 @@
 workflows:
-  free_build:
-    name: Free Account iOS Build
+  xcode_build:
+    name: Build iOS App
     environment:
       vars:
-        # Set any required environment variables here
-        PROJECT_NAME: "ShakeFlashlightWidgetApp"
-        SCHEME: "ShakeFlashlightWidgetApp"
-      xcode: latest
+        PROJECT_NAME: "ShakeFlashlightWidgetApp" # Replace with your actual project name
+        SCHEME: "ShakeFlashlightWidgetApp"       # Replace with your scheme name
+      xcode: latest                              # Use the latest Xcode version available
     scripts:
-      - name: Install CocoaPods dependencies
+      - name: Install dependencies
         script: |
           gem install cocoapods
           pod install
-      - name: Build for iOS Simulator
+      - name: Build the app for iOS Simulator
         script: |
           xcodebuild \
             -workspace ${PROJECT_NAME}.xcworkspace \
