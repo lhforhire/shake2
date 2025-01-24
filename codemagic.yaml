@@ -2,7 +2,7 @@ workflows:
   version: 2.0
 
   build-and-deploy:
-    name: Build and Deploy with Xcode 15
+    name: Build and Deploy with Xcode 15 to TestFlight
     platform:
       ios:
         # Build settings specific for Xcode 15
@@ -10,11 +10,14 @@ workflows:
           - flutter clean
           - flutter pub get
           - flutter build ios --release --no-codesign
-        # Deploy commands (if you need any deployment, like Firebase or TestFlight)
+        # Deploy commands to TestFlight using fastlane
         deploy:
           - script: |
-              echo "Deploying to Firebase or another platform"
-              # Add your deployment commands here
+              # Install fastlane
+              gem install fastlane
+              cd ios
+              # Use fastlane to upload to TestFlight
+              fastlane ios beta
 
     # Environment to use Xcode 15
     environment:
@@ -26,6 +29,11 @@ workflows:
       pre_cache:
         - flutter
         - cocoapods
+
+    # Optional: Run tests after building the app
+    tests:
+      post-build:
+        - flutter test
 
     # Optional: Run tests after building the app
     tests:
