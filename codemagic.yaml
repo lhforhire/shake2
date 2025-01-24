@@ -1,0 +1,33 @@
+
+workflows:
+  ios_build_and_test:
+    name: iOS Build and Test Workflow
+    environment:
+      xcode: 13.3
+    scripts:
+      - name: Run tests
+        script: |
+          xcodebuild -project ShakeFlashlightWidgetApp.xcodeproj \
+                      -scheme ShakeFlashlightWidgetApp \
+                      -sdk iphonesimulator \
+                      -destination 'platform=iOS Simulator,name=iPhone 14,OS=15.4' \
+                      test
+      - name: Build the Xcode project
+        script: |
+          xcodebuild -project ShakeFlashlightWidgetApp.xcodeproj \
+                      -scheme ShakeFlashlightWidgetApp \
+                      -sdk iphoneos \
+                      -configuration Release \
+                      archive -archivePath $CM_BUILD_DIR/ShakeFlashlightWidgetApp.xcarchive
+      - name: Export IPA
+        script: |
+          xcodebuild -exportArchive \
+                      -archivePath $CM_BUILD_DIR/ShakeFlashlightWidgetApp.xcarchive \
+                      -exportOptionsPlist $CM_SOURCE_DIR/exportOptions.plist \
+                      -exportPath $CM_BUILD_DIR
+    artifacts:
+      - $CM_BUILD_DIR/*.ipa
+    publishing:
+      email:
+        recipients:
+          - petrosince88@gmail.com
