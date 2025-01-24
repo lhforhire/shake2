@@ -1,0 +1,86 @@
+
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 56;
+    objects = {
+
+        /* Begin PBXBuildFile section */
+        1D6058900D05DD3D006BFB55 /* BuildFile */ = {
+            isa = PBXBuildFile;
+            fileRef = 1D6058900D05DD3D006BFB56 /* AppDelegate.swift */;
+        };
+        /* End PBXBuildFile section */
+
+        /* Begin PBXFileReference section */
+        1D6058900D05DD3D006BFB56 /* AppDelegate.swift */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = AppDelegate.swift;
+            sourceTree = "<group>";
+        };
+        /* End PBXFileReference section */
+
+        /* Begin PBXGroup section */
+        1D6058900D05DD3D006BFB57 /* MainGroup */ = {
+            isa = PBXGroup;
+            children = (
+                1D6058900D05DD3D006BFB56 /* AppDelegate.swift */,
+            );
+            path = "";
+            sourceTree = "<group>";
+        };
+        /* End PBXGroup section */
+
+        /* Begin PBXNativeTarget section */
+        1D6058900D05DD3D006BFB58 /* ShakeFlashlightWidgetApp */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXNativeTarget */;
+            buildPhases = (
+                1D6058900D05DD3D006BFB5A /* SourcesBuildPhase */,
+            );
+            name = ShakeFlashlightWidgetApp;
+            productName = ShakeFlashlightWidgetApp;
+            productType = "com.apple.product-type.application";
+        };
+        /* End PBXNativeTarget section */
+
+        /* Begin PBXProject section */
+        1D6058900D05DD3D006BFB54 /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                LastUpgradeCheck = 1500;
+            };
+            buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */;
+            compatibilityVersion = "Xcode 15.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+            );
+            mainGroup = 1D6058900D05DD3D006BFB57;
+            productRefGroup = 1D6058900D05DD3D006BFB57;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                1D6058900D05DD3D006BFB58 /* ShakeFlashlightWidgetApp */,
+            );
+        };
+        /* End PBXProject section */
+
+        /* Begin XCConfigurationList section */
+        1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                1D6058900D05DD3D006BFB5B /* Debug */,
+                1D6058900D05DD3D006BFB5C /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        /* End XCConfigurationList section */
+    };
+
+    rootObject = 1D6058900D05DD3D006BFB54 /* Project object */;
+}
