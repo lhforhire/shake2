@@ -18,7 +18,7 @@ workflows:
 
     # Environment to use Xcode 15
     environment:
-      xcode: 15.0
+      xcode: "15.0" # Ensure to use a string format for version numbers in some cases
       flutter: stable # Adjust this if you want a specific Flutter version
 
     # Dependencies to pre-cache for faster builds
@@ -26,6 +26,11 @@ workflows:
       pre_cache:
         - flutter
         - cocoapods
+
+    # Optional: Run tests after building the app
+    tests:
+      post-build:
+        - flutter test
 
     # Optional: Run tests after building the app
     tests:
