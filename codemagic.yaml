@@ -1,10 +1,16 @@
-scripts:
-  - name: Build the App
-    script: |
-      xcodebuild \
-        -project ShakeFlashlightWidgetApp.xcodeproj \
-        -scheme ShakeFlashlightWidgetApp \
-        -sdk iphonesimulator \
-        -configuration Debug \
-        -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
-        clean build | tee build.log
+
+workflows:
+  xcode_build:
+    name: iOS Build
+    environment:
+      xcode: 15.0
+      cocoapods: default
+    scripts:
+      - name: Install dependencies
+        script: |
+          pod install
+      - name: Build the project
+        script: |
+          xcodebuild -workspace ShakeFlashlightWidgetApp.xcworkspace -scheme ShakeFlashlight -sdk iphoneos -configuration Release clean build
+    artifacts:
+      - build/ios/Release-iphoneos/*.ipa
