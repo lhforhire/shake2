@@ -1,4 +1,4 @@
-platform :ios, '14.0' # Ensure the platform matches your project
+platform :ios, '15.0' # Ensure the platform matches your project
 
 target 'ShakeFlashlightWidgetApp' do
   use_frameworks! # CocoaPods dynamic framework usage
