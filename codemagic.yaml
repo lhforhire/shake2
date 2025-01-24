@@ -1,17 +1,14 @@
-workflows:
-  version:  # This should be a dictionary
-    "workflow_version": "2.0"  # This is the actual version inside the dictionary
+version: 2  # Codemagic YAML version (this is not part of workflows but for the whole file)
 
+workflows:
   build-and-deploy:
     name: Build and Deploy with Xcode 15 to TestFlight
     platform:
       ios:
-        # Build settings specific for Xcode 15
         build:
           - flutter clean
           - flutter pub get
           - flutter build ios --release --no-codesign
-        # Deploy commands to TestFlight using fastlane
         deploy:
           - script: |
               # Install fastlane
@@ -20,18 +17,15 @@ workflows:
               # Use fastlane to upload to TestFlight
               fastlane ios beta
 
-    # Environment to use Xcode 15
     environment:
-      xcode: "15.0"  # Ensure to use a string format for version numbers in some cases
-      flutter: stable  # Adjust this if you want a specific Flutter version
+      xcode: "15.0"  # Xcode version to use
+      flutter: stable  # Flutter version to use
 
-    # Dependencies to pre-cache for faster builds
     dependencies:
       pre_cache:
         - flutter
         - cocoapods
 
-    # Optional: Run tests after building the app
     tests:
       post-build:
         - flutter test
