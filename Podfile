@@ -1,9 +1,8 @@
-platform :ios, '15.0' # Ensure the platform matches your project
+platform :ios, '14.0' # Ensure this matches your project's requirements
 
 target 'ShakeFlashlightWidgetApp' do
-  use_frameworks! # CocoaPods dynamic framework usage
-
-  # Add dependencies here
-  pod 'Alamofire', '~> 5.6' # Example dependency
-  pod 'SwiftyJSON', '~> 5.0' # Example dependency
+  use_frameworks!
+  # List your pods here
+  # pod 'SomeDependency', '~> 1.0'
 end
+
