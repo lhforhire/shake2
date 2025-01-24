@@ -1,25 +1,60 @@
+
 // !$*UTF8*$!
 {
-    archiveVersion = 1
-    classes = {}
-    objectVersion = 55
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 56;
     objects = {
 
-    }
+        /* Begin PBXBuildFile section */
+        /* Add your build files here */
+        /* End PBXBuildFile section */
 
-    rootObject = {
-        isa = PBXProject
-        buildConfigurationList = {}
-        compatibilityVersion = "Xcode 15.0"
-        developmentRegion = en
-        hasScannedForEncodings = 0
-        knownRegions = (en,)
-        mainGroup = {}
-        productRefGroup = {}
-        projectDirPath = ""
-        projectReferences = ()
-        projectRoot = ""
-        targets = ()
-    }
+        /* Begin PBXFileReference section */
+        /* Add your file references here */
+        /* End PBXFileReference section */
+
+        /* Begin PBXGroup section */
+        /* Define your file groups here */
+        /* End PBXGroup section */
+
+        /* Begin PBXNativeTarget section */
+        /* Define your build target here */
+        /* End PBXNativeTarget section */
+
+        /* Begin PBXProject section */
+        1D6058900D05DD3D006BFB54 /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                LastUpgradeCheck = 1500;
+            };
+            buildConfigurationList = 1D6058900D05DD3D006BFB54 /* Build configuration list for PBXProject */;
+            compatibilityVersion = "Xcode 15.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+            );
+            mainGroup = 1D6058900D05DD3D006BFB54;
+            productRefGroup = 1D6058900D05DD3D006BFB54;
+            projectDirPath = "";
+            projectReferences = (
+            );
+            projectRoot = "";
+            targets = (
+                /* Your target */
+            );
+        };
+        /* End PBXProject section */
+
+        /* Begin XCBuildConfiguration section */
+        /* Define your build configurations here */
+        /* End XCBuildConfiguration section */
+
+        /* Begin XCConfigurationList section */
+        /* Define your build configuration list here */
+        /* End XCConfigurationList section */
+    };
+
+    rootObject = 1D6058900D05DD3D006BFB54 /* Project object */;
 }
-
