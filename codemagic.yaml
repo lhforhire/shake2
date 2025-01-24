@@ -2,14 +2,13 @@ version: 2  # Codemagic YAML version
 
 workflows:
   build-and-deploy:
-    platform:
-      ios:
-        build:
-          - flutter clean
-          - flutter pub get
-          - flutter build ios --release --no-codesign
-        deploy:
-          - script: |
-              gem install fastlane
-              cd ios
-              fastlane ios beta
+    name: Build and Deploy with Xcode 15 to TestFlight
+    ios:
+      # Steps to run for the iOS platform
+      - flutter clean
+      - flutter pub get
+      - flutter build ios --release --no-codesign
+      - script: |
+          gem install fastlane
+          cd ios
+          fastlane ios beta
