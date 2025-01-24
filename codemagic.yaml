@@ -1,7 +1,10 @@
 scripts:
   - name: Build the App
     script: |
-      xcodebuild -project ShakeFlashlightWidgetApp.xcodeproj \
-                  -scheme ShakeFlashlightWidgetApp \
-                  -sdk iphonesimulator \
-                  -configuration Debug clean build
+      xcodebuild \
+        -project ShakeFlashlightWidgetApp.xcodeproj \
+        -scheme ShakeFlashlightWidgetApp \
+        -sdk iphonesimulator \
+        -configuration Debug \
+        -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
+        clean build | tee build.log
