@@ -1,14 +1,7 @@
-workflows:
-  shake2:
-    name: Shake2 iOS Build
-    environment:
-      xcode: 15.0
-    scripts:
-      - name: Build the App
-        script: |
-          xcodebuild -project ShakeFlashlightWidgetApp.xcodeproj \
-                      -scheme ShakeFlashlightWidgetApp \
-                      -sdk iphoneos \
-                      -configuration Release clean build
-    artifacts:
-      - build/ios/Release-iphoneos/*.ipa
+scripts:
+  - name: Build the App
+    script: |
+      xcodebuild -project ShakeFlashlightWidgetApp.xcodeproj \
+                  -scheme ShakeFlashlightWidgetApp \
+                  -sdk iphonesimulator \
+                  -configuration Debug clean build
