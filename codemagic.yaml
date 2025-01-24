@@ -4,14 +4,8 @@ workflows:
   ios_build_and_test:
     name: iOS Build and Test Workflow
     environment:
-      xcode: 15.0  # Update to use Xcode 15
+      xcode: 15.0
     scripts:
-      - name: Install dependencies (CocoaPods, etc.)
-        script: |
-          gem install fastlane
-          cd ios
-          pod install  # Install any CocoaPods dependencies
-
       - name: Run tests
         script: |
           xcodebuild -project ShakeFlashlightWidgetApp.xcodeproj \
@@ -37,8 +31,7 @@ workflows:
 
       - name: Deploy to TestFlight
         script: |
-          cd ios
-          fastlane ios beta  # Ensure fastlane is properly configured for TestFlight deployment
+          fastlane ios beta
 
     artifacts:
       - $CM_BUILD_DIR/*.ipa
