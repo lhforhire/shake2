@@ -1,25 +1,26 @@
 workflows:
   xcode_build:
-    name: Build iOS App
+    name: Build iOS App Without CocoaPods
     environment:
       vars:
-        PROJECT_NAME: "ShakeFlashlightWidgetApp" # Replace with your actual project name
-        SCHEME: "ShakeFlashlightWidgetApp"       # Replace with your scheme name
-      xcode: latest                              # Use the latest Xcode version available
+        PROJECT_NAME: "ShakeFlashlightWidgetApp"  # Replace with your project name
+        SCHEME: "ShakeFlashlightWidgetApp"        # Replace with your scheme name
+      xcode: latest                               # Use the latest Xcode version available
     scripts:
-      - name: Install dependencies
+      - name: Clean and prepare the project
         script: |
-          gem install cocoapods
-          pod install
+          # Clean previous builds and derived data
+          xcodebuild clean -project ${PROJECT_NAME}.xcodeproj
       - name: Build the app for iOS Simulator
         script: |
+          # Build the app targeting the iOS Simulator
           xcodebuild \
-            -workspace ${PROJECT_NAME}.xcworkspace \
+            -project ${PROJECT_NAME}.xcodeproj \
             -scheme ${SCHEME} \
             -sdk iphonesimulator \
             -configuration Debug \
             -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
             clean build | tee build.log
     artifacts:
-      - build.log
+      - build.log                                  # Save build logs for debugging
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/Products/Debug-iphonesimulator/*.app
