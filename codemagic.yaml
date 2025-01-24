@@ -3,7 +3,7 @@ workflows:
   ios_build_and_test:
     name: iOS Build and Test Workflow
     environment:
-      xcode: 13.3
+      xcode: 14.1
     scripts:
       - name: Run tests
         script: |
