@@ -1,16 +1,24 @@
 
 workflows:
-  xcode_build:
-    name: iOS Build
+  ios_build:
+    name: iOS Build Workflow
     environment:
-      xcode: 15.0
+      xcode: 15.0 # Xcode version
       cocoapods: default
     scripts:
+      - name: Update CocoaPods (if needed)
+        script: |
+          gem install cocoapods --no-document
+          pod repo update
       - name: Install dependencies
         script: |
+          cd {REPO_NAME} # Replace with your repository folder if applicable
           pod install
-      - name: Build the project
+      - name: Build the app
         script: |
-          xcodebuild -workspace ShakeFlashlightWidgetApp.xcworkspace -scheme ShakeFlashlight -sdk iphoneos -configuration Release clean build
+          xcodebuild -workspace ShakeFlashlightWidgetApp.xcworkspace \
+                      -scheme ShakeFlashlight \
+                      -sdk iphoneos \
+                      -configuration Release clean build
     artifacts:
       - build/ios/Release-iphoneos/*.ipa
