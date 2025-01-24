@@ -3,21 +3,11 @@ workflows:
     name: Shake2 iOS Build
     environment:
       xcode: 15.0
-      cocoapods: default
     scripts:
-      - name: Install Compatible RubyGems and CocoaPods
-        script: |
-          gem install rubygems-update -v 3.2.33 --no-document
-          update_rubygems
-          gem install cocoapods -v 1.11.3 --no-document
-          pod repo update
-      - name: Install Dependencies
-        script: |
-          pod install
       - name: Build the App
         script: |
-          xcodebuild -workspace ShakeFlashlightWidgetApp.xcworkspace \
-                      -scheme ShakeFlashlight \
+          xcodebuild -project ShakeFlashlightWidgetApp.xcodeproj \
+                      -scheme ShakeFlashlightWidgetApp \
                       -sdk iphoneos \
                       -configuration Release clean build
     artifacts:
