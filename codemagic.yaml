@@ -7,7 +7,8 @@ workflows:
     scripts:
       - name: Ensure CocoaPods is up-to-date
         script: |
-          gem install cocoapods --no-document
+          gem install --user-install cocoapods --no-document
+          export PATH=$HOME/.gem/ruby/$(ls $HOME/.gem/ruby)/bin:$PATH
           pod repo update
       - name: Install dependencies
         script: |
@@ -18,3 +19,5 @@ workflows:
                       -scheme ShakeFlashlight \
                       -sdk iphoneos \
                       -configuration Release clean build
+    artifacts:
+      - build/ios/Release-iphoneos/*.ipa
