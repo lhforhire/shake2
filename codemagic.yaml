@@ -1,5 +1,6 @@
 workflows:
-  version: 2.0  # Define the version correctly as a string
+  version:  # This should be a dictionary
+    "workflow_version": "2.0"  # This is the actual version inside the dictionary
 
   build-and-deploy:
     name: Build and Deploy with Xcode 15 to TestFlight
