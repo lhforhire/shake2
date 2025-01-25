@@ -23,7 +23,7 @@ workflows:
           fi
       - name: Validate plist files
         script: |
-          plutil -lint shake2/ShakeFlashlightWidgetApp.xcodeproj/Info.plist
+          plutil -lint ShakeFlashlightWidgetApp.xcodeproj/Info.plist
           plutil -lint exportOptions.plist
       - name: Clean the project
         script: |
