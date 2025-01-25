@@ -16,7 +16,7 @@
         1D6058900D05DD3D006BFB56 /* AppDelegate.swift */ = {
             isa = PBXFileReference;
             lastKnownFileType = sourcecode.swift;
-            path = AppDelegate.swift;
+            path = ShakeFlashlight/AppDelegate.swift;
             sourceTree = "<group>";
         };
         /* End PBXFileReference section */
@@ -117,14 +117,10 @@
                 CODE_SIGN_STYLE = Automatic;
                 DEVELOPMENT_TEAM = "YOUR_TEAM_ID";
                 IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-                GCC_PREPROCESSOR_DEFINITIONS = (
-                    "DEBUG=1",
-                    "$(inherited)",
-                );
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
-                SWIFT_VERSION = 5.0; // Add this line
+                SWIFT_VERSION = 5.0;
             };
             name = Debug;
         };
@@ -139,7 +135,7 @@
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
-                SWIFT_VERSION = 5.0; // Add this line
+                SWIFT_VERSION = 5.0;
             };
             name = Release;
         };
