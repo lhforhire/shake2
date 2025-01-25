@@ -1,4 +1,3 @@
-
 // !$*UTF8*$!
 {
     archiveVersion = 1;
@@ -37,7 +36,7 @@
             isa = PBXNativeTarget;
             buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXNativeTarget */;
             buildPhases = (
-);
+            );
             name = ShakeFlashlightWidgetApp;
             productName = ShakeFlashlightWidgetApp;
             productType = "com.apple.product-type.application";
@@ -102,7 +101,7 @@
                 CODE_SIGN_STYLE = Automatic;
                 DEVELOPMENT_TEAM = "";
                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-                INFOPLIST_FILE = AppDelegate/Info.plist;
+                INFOPLIST_FILE = ShakeFlashlight/Info.plist; /* Updated path */
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
             };
