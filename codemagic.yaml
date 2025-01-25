@@ -23,7 +23,7 @@ workflows:
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
-            -derivedDataPath $CM_BUILD_DIR/DerivedData \
+            -derivedDataPath /Users/runner/workspace/DerivedData \
             build || { echo "Error: Build failed."; exit 1; }
       - name: Archive the app
         script: |
@@ -32,31 +32,31 @@ workflows:
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
-            -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
+            -archivePath /Users/runner/workspace/${PROJECT_NAME}.xcarchive \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
             archive || { echo "Error: Archive failed."; exit 1; }
       - name: Remove app name from development assets
         script: |
-          plutil -remove ':assets:developmentAssets:0:appName' $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive/Info.plist || echo "No app name found under development assets."
+          plutil -remove ':assets:developmentAssets:0:appName' /Users/runner/workspace/${PROJECT_NAME}.xcarchive/Info.plist || echo "No app name found under development assets."
       - name: List archive contents
         script: |
-          echo "Listing contents of $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive:"
-          ls $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive
+          echo "Listing contents of /Users/runner/workspace/${PROJECT_NAME}.xcarchive:"
+          ls /Users/runner/workspace/${PROJECT_NAME}.xcarchive
       - name: Inspect archive contents
         script: |
-          echo "Inspecting contents of $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive:"
-          find $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive -type f
+          echo "Inspecting contents of /Users/runner/workspace/${PROJECT_NAME}.xcarchive:"
+          find /Users/runner/workspace/${PROJECT_NAME}.xcarchive -type f
       - name: Export the unsigned .ipa file
         script: |
-          if [ ! -d $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive ]; then
-            echo "Error: Archive not found at $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive."
+          if [ ! -d /Users/runner/workspace/${PROJECT_NAME}.xcarchive ]; then
+            echo "Error: Archive not found at /Users/runner/workspace/${PROJECT_NAME}.xcarchive."
             exit 1
           fi
           xcodebuild -exportArchive \
-            -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
+            -archivePath /Users/runner/workspace/${PROJECT_NAME}.xcarchive \
             -exportOptionsPlist ./exportOptions.plist \
-            -exportPath $CM_BUILD_DIR/ExportedProducts || { echo "Error: Export failed."; exit 1; }
+            -exportPath /Users/runner/workspace/ExportedProducts || { echo "Error: Export failed."; exit 1; }
     artifacts:
-      - $CM_BUILD_DIR/ExportedProducts/*.ipa
+      - /Users/runner/workspace/ExportedProducts/*.ipa
