@@ -5,7 +5,8 @@
 85|                 CODE_SIGN_IDENTITY = "";
 86|                 CODE_SIGN_STYLE = Automatic;
 87|                 DEVELOPMENT_TEAM = "";
-88|                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+-88|                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
++88|                 IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 89|                 GCC_PREPROCESSOR_DEFINITIONS = (
 90|                     "DEBUG=1",
 91|                     "$(inherited)",
@@ -13,8 +14,8 @@
 93|                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
 94|                 PRODUCT_NAME = "$(TARGET_NAME)";
 95|                 SDKROOT = iphoneos;
-+96|                 VALID_ARCHS = "arm64 armv7 armv7s";
-+97|                 EXCLUDED_ARCHS = "";
+96|                 VALID_ARCHS = "arm64 armv7 armv7s";
+97|                 EXCLUDED_ARCHS = "";
 98|             };
 99|             name = Debug;
 100|         };
@@ -25,12 +26,13 @@
 105|                 CODE_SIGN_IDENTITY = "";
 106|                 CODE_SIGN_STYLE = Automatic;
 107|                 DEVELOPMENT_TEAM = "";
-108|                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+-108|                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
++108|                 IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 107|                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
 108|                 PRODUCT_NAME = "$(TARGET_NAME)";
 109|                 SDKROOT = iphoneos;
-+110|                 VALID_ARCHS = "arm64 armv7 armv7s";
-+111|                 EXCLUDED_ARCHS = "";
+110|                 VALID_ARCHS = "arm64 armv7 armv7s";
+111|                 EXCLUDED_ARCHS = "";
 112|             };
 113|             name = Release;
 114|         };
