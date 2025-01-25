@@ -124,6 +124,8 @@
                 INFOPLIST_FILE = AppDelegate/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
+                SWIFT_VERSION = 5.0; // Set to supported version
+                ALWAYS_SEARCH_USER_PATHS = NO; // Set to NO
             };
             name = Debug;
         };
@@ -138,11 +140,12 @@
                 INFOPLIST_FILE = AppDelegate/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
+                SWIFT_VERSION = 5.0; // Set to supported version
+                ALWAYS_SEARCH_USER_PATHS = NO; // Set to NO
             };
             name = Release;
         };
         /* End XCBuildConfiguration section */
-
     };
 
     rootObject = 1D6058900D05DD3D006BFB54 /* Project object */;
