@@ -1,38 +1,52 @@
 workflows:
-  xcode_build:
-    name: Build iOS App Without CocoaPods
+  ios_device_build:
+    name: Build iOS App for Physical Device
     environment:
       vars:
         PROJECT_NAME: "ShakeFlashlightWidgetApp"  # Replace with your project name
         SCHEME: "ShakeFlashlightWidgetApp"        # Replace with your scheme name
-      xcode: latest                               # Use the latest Xcode version available
+      xcode: latest                               # Use the latest Xcode version
+      signing:
+        type: auto                                # Automatic signing with your free Apple Developer account
     scripts:
       - name: Clean and prepare the project
         script: |
           # Clean previous builds and derived data
-          rm -rf /Users/builder/clone/DerivedData
+          rm -rf $CM_BUILD_DIR/DerivedData
           xcodebuild clean -project ${PROJECT_NAME}.xcodeproj
-      - name: Build the app for iOS Simulator
+      - name: Archive the app
         script: |
-          # Build the app targeting the iOS Simulator with explicit derived data path
+          # Archive the app for physical devices
           xcodebuild \
             -project ${PROJECT_NAME}.xcodeproj \
             -scheme ${SCHEME} \
-            -sdk iphonesimulator \
-            -configuration Debug \
-            -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
-            -derivedDataPath /Users/builder/clone/DerivedData \
-            clean build | tee build.log
-      - name: Check DerivedData contents
+            -sdk iphoneos \
+            -configuration Release \
+            -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
+            archive | tee archive.log
+      - name: Export the .ipa file
         script: |
-          # List contents of DerivedData to confirm .app creation
-          if [ -d "/Users/builder/clone/DerivedData" ]; then
-            echo "DerivedData directory contents:"
-            find /Users/builder/clone/DerivedData -name "*.app" || echo "No .app file found"
-          else
-            echo "DerivedData directory does not exist."
-            exit 1
-          fi
+          # Create export options for the .ipa file
+          echo '<?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>development</string> <!-- Use "development" for free accounts -->
+            <key>teamID</key>
+            <string>YOUR_TEAM_ID</string> <!-- Replace with your Apple Developer Team ID -->
+            <key>signingStyle</key>
+            <string>automatic</string>
+            <key>compileBitcode</key>
+            <false/>
+          </dict>
+          </plist>' > exportOptions.plist
+          # Export the .ipa file
+          xcodebuild -exportArchive \
+            -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
+            -exportOptionsPlist exportOptions.plist \
+            -exportPath $CM_BUILD_DIR/ExportedProducts | tee export.log
     artifacts:
-      - build.log                                  # Save build logs for debugging
-      - /Users/builder/clone/DerivedData/Build/Products/Debug-iphonesimulator/*.app
+      - archive.log                                # Log of the archive process
+      - export.log                                 # Log of the export process
+      - $CM_BUILD_DIR/ExportedProducts/*.ipa       # The generated .ipa file
