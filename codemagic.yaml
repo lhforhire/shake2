@@ -6,8 +6,6 @@ workflows:
         PROJECT_NAME: "ShakeFlashlightWidgetApp"  # Replace with your project name
         SCHEME: "ShakeFlashlightWidgetApp"        # Replace with your scheme name
       xcode: latest                               # Use the latest Xcode version
-      signing:
-        type: auto                                # Automatic signing with your free Apple Developer account
     scripts:
       - name: Clean and prepare the project
         script: |
