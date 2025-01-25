@@ -12,7 +12,7 @@
         );
         INFOPLIST_FILE = "ShakeFlashlight/Info.plist"; // Path to the Info.plist
         PRODUCT_NAME = "$(TARGET_NAME)";
-        SDKROOT = iphoneos16.0; // Compatible SDK version for Xcode 15
+        SDKROOT = iphoneos; // Updated for compatibility
         SWIFT_VERSION = 5.0; // Explicit Swift version declaration
         EXCLUDED_ARCHS = "i386 x86_64"; // Exclude unsupported simulator architectures
     };
@@ -29,7 +29,7 @@
         IPHONEOS_DEPLOYMENT_TARGET = 15.0; // Target iOS 15
         INFOPLIST_FILE = "ShakeFlashlight/Info.plist"; // Path to the Info.plist
         PRODUCT_NAME = "$(TARGET_NAME)";
-        SDKROOT = iphoneos16.0; // Compatible SDK version for Xcode 15
+        SDKROOT = iphoneos; // Updated for compatibility
         SWIFT_VERSION = 5.0; // Explicit Swift version declaration
         EXCLUDED_ARCHS = "i386 x86_64"; // Exclude unsupported simulator architectures
     };
