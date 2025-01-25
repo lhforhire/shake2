@@ -5,7 +5,7 @@ workflows:
       vars:
         PROJECT_NAME: "ShakeFlashlightWidgetApp"
         SCHEME: "ShakeFlashlightWidgetApp"
-        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj" # Corrected project file name
+        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj"
     scripts:
       - name: Check project file
         script: |
@@ -36,7 +36,7 @@ workflows:
           fi
           xcodebuild -exportArchive \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            -exportOptionsPlist shake2/exportOptions.plist \ # Corrected path for exportOptions.plist
+            -exportOptionsPlist ./exportOptions.plist \
             -exportPath $CM_BUILD_DIR/ExportedProducts || { echo "Error: Export failed."; exit 1; }
     artifacts:
       - $CM_BUILD_DIR/ExportedProducts/*.ipa
