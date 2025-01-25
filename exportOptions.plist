@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
     <key>method</key>
-    <string>app-store-connect</string>
+    <string>developer-id</string>
     <key>signingStyle</key>
     <string>manual</string>
     <key>stripSwiftSymbols</key>
     <true/>
     <key>compileBitcode</key>
-    <false/>
+    <true/>
 </dict>
 </plist>
