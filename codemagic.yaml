@@ -3,9 +3,9 @@ workflows:
     name: Build Unsigned iOS App for AltStore
     environment:
       vars:
-        PROJECT_NAME: "Shake2"
+        PROJECT_NAME: "ShakeFlashlightWidgetApp"
         SCHEME: "ShakeFlashlightWidgetApp"
-        PROJECT_PATH: "Shake2.xcodeproj" # Updated project name and path
+        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj" # Corrected project file name
     scripts:
       - name: Check project file
         script: |
