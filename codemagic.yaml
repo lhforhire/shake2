@@ -5,21 +5,22 @@ workflows:
       vars:
         PROJECT_NAME: "ShakeFlashlightWidgetApp"
         SCHEME: "ShakeFlashlightWidgetApp"
-      xcode: latest
+        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj" # Updated path
+    xcode: latest
     scripts:
       - name: Check project file
         script: |
-          if [ ! -f ${PROJECT_NAME}.xcodeproj/project.pbxproj ]; then
-            echo "Error: Project file ${PROJECT_NAME}.xcodeproj not found."
+          if [ ! -f $PROJECT_PATH/${PROJECT_NAME}.xcodeproj/project.pbxproj ]; then
+            echo "Error: Project file $PROJECT_PATH/${PROJECT_NAME}.xcodeproj not found."
             exit 1
           fi
       - name: Clean the project
         script: |
-          xcodebuild clean -project ${PROJECT_NAME}.xcodeproj || echo "Warning: Clean failed, continuing build."
+          xcodebuild clean -project $PROJECT_PATH/${PROJECT_NAME}.xcodeproj || echo "Warning: Clean failed, continuing build."
       - name: Archive the app
         script: |
           xcodebuild \
-            -project ${PROJECT_NAME}.xcodeproj \
+            -project $PROJECT_PATH/${PROJECT_NAME}.xcodeproj \
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
