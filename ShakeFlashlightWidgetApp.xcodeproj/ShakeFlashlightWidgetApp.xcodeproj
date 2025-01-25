@@ -31,6 +31,37 @@
         };
         /* End PBXGroup section */
 
+        /* Begin PBXSourcesBuildPhase section */
+        1D6058900D05DD3D006BFB60 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                1D6058900D05DD3D006BFB55 /* AppDelegate.swift */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        /* End PBXSourcesBuildPhase section */
+
+        /* Begin PBXFrameworksBuildPhase section */
+        1D6058900D05DD3D006BFB61 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        /* End PBXFrameworksBuildPhase section */
+
+        /* Begin PBXResourcesBuildPhase section */
+        1D6058900D05DD3D006BFB62 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        /* End PBXResourcesBuildPhase section */
+
         /* Begin PBXNativeTarget section */
         1D6058900D05DD3D006BFB58 /* ShakeFlashlightWidgetApp */ = {
             isa = PBXNativeTarget;
@@ -50,7 +81,7 @@
         1D6058900D05DD3D006BFB54 /* Project object */ = {
             isa = PBXProject;
             attributes = {
-                LastUpgradeCheck = 1500;
+                LastUpgradeCheck = 1600;
             };
             buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */;
             compatibilityVersion = "Xcode 15.0";
