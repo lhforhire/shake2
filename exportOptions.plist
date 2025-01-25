@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>method</key>
-    <string>development</string> <!-- Use 'development' for unsigned builds -->
+    <string>debugging</string> <!-- Use 'development' for unsigned builds -->
     <key>signingStyle</key>
     <string>manual</string>
     <key>stripSwiftSymbols</key>
