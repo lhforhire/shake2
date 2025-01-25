@@ -16,6 +16,15 @@ workflows:
       - name: Clean the project
         script: |
           xcodebuild clean -project $PROJECT_PATH || echo "Warning: Clean failed, continuing build."
+      - name: Build the app
+        script: |
+          xcodebuild \
+            -project $PROJECT_PATH \
+            -scheme ${SCHEME} \
+            -sdk iphoneos \
+            -configuration Release \
+            -derivedDataPath $CM_BUILD_DIR/DerivedData \
+            build || { echo "Error: Build failed."; exit 1; }
       - name: Archive the app
         script: |
           xcodebuild \
@@ -32,6 +41,10 @@ workflows:
         script: |
           echo "Listing contents of $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive:"
           ls $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive
+      - name: Inspect archive contents
+        script: |
+          echo "Inspecting contents of $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive:"
+          find $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive -type f
       - name: Export the unsigned .ipa file
         script: |
           if [ ! -d $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive ]; then
