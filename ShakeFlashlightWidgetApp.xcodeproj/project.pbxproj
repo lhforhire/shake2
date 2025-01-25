@@ -102,7 +102,7 @@
                 CODE_SIGN_STYLE = Automatic;
                 DEVELOPMENT_TEAM = "";
                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-                INFOPLIST_FILE = AppDelegate/Info.plist;
+                INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
             };
