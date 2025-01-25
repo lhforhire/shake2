@@ -1,36 +1,36 @@
-81|         1D6058900D05DD3D006BFB5B /* Debug */ = {
-82|             isa = XCBuildConfiguration;
-83|             buildSettings = {
-84|                 PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
-85|                 CODE_SIGN_IDENTITY = "";
-86|                 CODE_SIGN_STYLE = Automatic;
-87|                 DEVELOPMENT_TEAM = "";
-88|                 IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-89|                 GCC_PREPROCESSOR_DEFINITIONS = (
-90|                     "DEBUG=1",
-91|                     "$(inherited)",
-92|                 );
-93|                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
-94|                 PRODUCT_NAME = "$(TARGET_NAME)";
-95|                 SDKROOT = iphoneos16.0;
-96|                 VALID_ARCHS = "arm64 armv7 armv7s";
-97|                 EXCLUDED_ARCHS = "";
-98|             };
-99|             name = Debug;
-100|         };
-101|         1D6058900D05DD3D006BFB5C /* Release */ = {
-102|             isa = XCBuildConfiguration;
-103|             buildSettings = {
-104|                 PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
-105|                 CODE_SIGN_IDENTITY = "";
-106|                 CODE_SIGN_STYLE = Automatic;
-107|                 DEVELOPMENT_TEAM = "";
-108|                 IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-107|                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
-108|                 PRODUCT_NAME = "$(TARGET_NAME)";
-109|                 SDKROOT = iphoneos16.0;
-110|                 VALID_ARCHS = "arm64 armv7 armv7s";
-111|                 EXCLUDED_ARCHS = "";
-112|             };
-113|             name = Release;
-114|         };
+81| 1D6058900D05DD3D006BFB5B /* Debug */ = {
+82| isa = XCBuildConfiguration;
+83| buildSettings = {
+84| PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
+85| CODE_SIGN_IDENTITY = "";
+86| CODE_SIGN_STYLE = Automatic;
+87| DEVELOPMENT_TEAM = "";
+88| IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+89| GCC_PREPROCESSOR_DEFINITIONS = (
+90| "DEBUG=1",
+91| "$(inherited)",
+92| );
+93| INFOPLIST_FILE = ShakeFlashlight/Info.plist;
+94| PRODUCT_NAME = "$(TARGET_NAME)";
+95| SDKROOT = iphoneos16.0;
+96| VALID_ARCHS = "arm64 armv7 armv7s";
+97| EXCLUDED_ARCHS = "";
+98| };
+99| name = Debug;
+100| };
+101| 1D6058900D05DD3D006BFB5C /* Release */ = {
+102| isa = XCBuildConfiguration;
+103| buildSettings = {
+104| PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
+105| CODE_SIGN_IDENTITY = "";
+106| CODE_SIGN_STYLE = Automatic;
+107| DEVELOPMENT_TEAM = "";
+108| IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+107| INFOPLIST_FILE = ShakeFlashlight/Info.plist;
+108| PRODUCT_NAME = "$(TARGET_NAME)";
+109| SDKROOT = iphoneos16.0;
+110| VALID_ARCHS = "arm64 armv7 armv7s";
+111| EXCLUDED_ARCHS = "";
+112| };
+113| name = Release;
+114| };
