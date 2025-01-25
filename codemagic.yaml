@@ -26,14 +26,7 @@ workflows:
         script: |
           xcodebuild -exportArchive \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            -exportOptionsPlist <(echo '<?xml version="1.0" encoding="UTF-8"?>
-            <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-            <plist version="1.0">
-            <dict>
-                <key>method</key>
-                <string>ad-hoc</string>
-            </dict>
-            </plist>') \
+            -exportOptionsPlist exportOptions.plist \
             -exportPath $CM_BUILD_DIR/ExportedProducts
     artifacts:
       - $CM_BUILD_DIR/ExportedProducts/*.ipa
