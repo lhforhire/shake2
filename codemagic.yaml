@@ -3,8 +3,8 @@ workflows:
     name: Build Unsigned iOS App for AltStore
     environment:
       vars:
-        PROJECT_NAME: "ShakeFlashlightWidgetApp"  # Replace with your project name
-        SCHEME: "ShakeFlashlightWidgetApp"        # Replace with your scheme name
+        PROJECT_NAME: "ShakeFlashlightWidgetApp"
+        SCHEME: "ShakeFlashlightWidgetApp"
       xcode: latest
     scripts:
       - name: Clean the project
@@ -26,7 +26,6 @@ workflows:
         script: |
           xcodebuild -exportArchive \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            -exportPath $CM_BUILD_DIR/ExportedProducts \
             -exportOptionsPlist <(echo '<?xml version="1.0" encoding="UTF-8"?>
             <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
             <plist version="1.0">
@@ -34,6 +33,7 @@ workflows:
                 <key>method</key>
                 <string>ad-hoc</string>
             </dict>
-            </plist>')
+            </plist>') \
+            -exportPath $CM_BUILD_DIR/ExportedProducts
     artifacts:
       - $CM_BUILD_DIR/ExportedProducts/*.ipa
