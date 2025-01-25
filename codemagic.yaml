@@ -5,7 +5,7 @@ workflows:
       vars:
         PROJECT_NAME: "ShakeFlashlightWidgetApp"
         SCHEME: "ShakeFlashlightWidgetApp"
-        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj/ShakeFlashlightWidgetApp.xcodeproj"
+        PROJECT_PATH: "shake2/ShakeFlashlightWidgetApp.xcodeproj"
     scripts:
       - name: Set Xcode version
         script: |
@@ -19,7 +19,7 @@ workflows:
           fi
       - name: Validate plist files
         script: |
-          plutil -lint ShakeFlashlight/Info.plist
+          plutil -lint shake2/Info.plist
           plutil -lint exportOptions.plist
       - name: Clean the project
         script: |
