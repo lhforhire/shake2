@@ -36,7 +36,7 @@
         1D6058900D05DD3D006BFB66 /* Main.storyboard */ = {
             isa = PBXFileReference;
             lastKnownFileType = file.storyboard;
-            path = ShakeFlashlight/Main.storyboard;
+            path = Main.storyboard;
             sourceTree = "<group>";
         };
         1D6058900D05DD3D006BFB67 /* Info.plist */ = {
@@ -106,16 +106,6 @@
         };
         /* End PBXSourcesBuildPhase section */
 
-        /* Begin PBXFrameworksBuildPhase section */
-        1D6058900D05DD3D006BFB61 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        /* End PBXFrameworksBuildPhase section */
-
         /* Begin PBXResourcesBuildPhase section */
         1D6058900D05DD3D006BFB62 /* Resources */ = {
             isa = PBXResourcesBuildPhase;
@@ -126,18 +116,6 @@
             runOnlyForDeploymentPostprocessing = 0;
         };
         /* End PBXResourcesBuildPhase section */
-
-        /* Begin XCConfigurationList section */
-        1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                1D6058900D05DD3D006BFB5B /* Debug */,
-                1D6058900D05DD3D006BFB5C /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Debug;
-        };
-        /* End XCConfigurationList section */
 
         /* Begin XCBuildConfiguration section */
         1D6058900D05DD3D006BFB5B /* Debug */ = {
@@ -151,8 +129,8 @@
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
-                ALWAYS_SEARCH_USER_PATHS = NO;
                 SWIFT_VERSION = 5.0;
+                ALWAYS_SEARCH_USER_PATHS = NO;
             };
             name = Debug;
         };
@@ -167,14 +145,12 @@
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
-                ALWAYS_SEARCH_USER_PATHS = NO;
                 SWIFT_VERSION = 5.0;
+                ALWAYS_SEARCH_USER_PATHS = NO;
             };
             name = Release;
         };
         /* End XCBuildConfiguration section */
-
     };
-
     rootObject = 1D6058900D05DD3D006BFB54 /* Project object */;
 }
