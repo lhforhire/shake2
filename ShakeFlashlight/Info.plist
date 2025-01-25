@@ -35,5 +35,9 @@
     </array>
     <key>NSCameraUsageDescription</key>
     <string>This app needs access to the camera to control the flashlight.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>App does not access the photo library.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Location is not used by this app.</string>
 </dict>
 </plist>
