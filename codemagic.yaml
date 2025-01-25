@@ -7,6 +7,10 @@ workflows:
         SCHEME: "ShakeFlashlightWidgetApp"
         PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj"
     scripts:
+      - name: Set Xcode version
+        script: |
+          sudo xcode-select -s /Applications/Xcode-16.2.app/Contents/Developer
+          xcodebuild -version
       - name: Check project file
         script: |
           if [ ! -f $PROJECT_PATH/project.pbxproj ]; then
