@@ -5,7 +5,7 @@ workflows:
       vars:
         PROJECT_NAME: "ShakeFlashlightWidgetApp"
         SCHEME: "ShakeFlashlightWidgetApp"
-        PROJECT_PATH: "shake2/ShakeFlashlightWidgetApp.xcodeproj/ShakeFlashlightWidgetApp.xcodeproj"
+        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj/ShakeFlashlightWidgetApp.xcodeproj"
     scripts:
       - name: Set Xcode version
         script: |
