@@ -1,5 +1,5 @@
 workflows:
-  ios_device_build:
+  ios_device_build:  # Workflow name defined here
     name: Build iOS App for Physical Device
     environment:
       vars:
