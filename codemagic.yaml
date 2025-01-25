@@ -33,26 +33,28 @@ workflows:
           xcodebuild clean -project $PROJECT_PATH
       - name: Build the app
         script: |
+          # Replace DEVELOPMENT_TEAM with a dummy or valid Team ID
           xcodebuild \
             -project $PROJECT_PATH \
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
             -derivedDataPath $CM_BUILD_DIR/DerivedData \
-            DEVELOPMENT_TEAM="1234567890" \ # Replace with a dummy or valid Team ID
+            DEVELOPMENT_TEAM="1234567890" \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
             build || { echo "Error: Build failed."; exit 1; }
       - name: Archive the app
         script: |
+          # Replace DEVELOPMENT_TEAM with a dummy or valid Team ID
           xcodebuild \
             -project $PROJECT_PATH \
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            DEVELOPMENT_TEAM="1234567890" \ # Replace with a dummy or valid Team ID
+            DEVELOPMENT_TEAM="1234567890" \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
