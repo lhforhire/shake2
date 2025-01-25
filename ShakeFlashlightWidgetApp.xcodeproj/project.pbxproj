@@ -1,3 +1,4 @@
+
 // !$*UTF8*$!
 {
     archiveVersion = 1;
@@ -19,13 +20,20 @@
             path = AppDelegate.swift;
             sourceTree = "<group>";
         };
+        1D6058900D05DD3D006BFB57 /* Info.plist */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.plist.xml;
+            path = ShakeFlashlight/Info.plist;
+            sourceTree = "<group>";
+        };
         /* End PBXFileReference section */
 
         /* Begin PBXGroup section */
-        1D6058900D05DD3D006BFB57 /* MainGroup */ = {
+        1D6058900D05DD3D006BFB58 /* MainGroup */ = {
             isa = PBXGroup;
             children = (
                 1D6058900D05DD3D006BFB56 /* AppDelegate.swift */,
+                1D6058900D05DD3D006BFB57 /* Info.plist */,
             );
             sourceTree = "<group>";
         };
@@ -57,15 +65,16 @@
             isa = PBXResourcesBuildPhase;
             buildActionMask = 2147483647;
             files = (
+                1D6058900D05DD3D006BFB57 /* Info.plist */,
             );
             runOnlyForDeploymentPostprocessing = 0;
         };
         /* End PBXResourcesBuildPhase section */
 
         /* Begin PBXNativeTarget section */
-        1D6058900D05DD3D006BFB58 /* ShakeFlashlightWidgetApp */ = {
+        1D6058900D05DD3D006BFB63 /* ShakeFlashlightWidgetApp */ = {
             isa = PBXNativeTarget;
-            buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXNativeTarget */;
+            buildConfigurationList = 1D6058900D05DD3D006BFB64 /* Build configuration list for PBXNativeTarget */;
             buildPhases = (
                 1D6058900D05DD3D006BFB60 /* Sources */,
                 1D6058900D05DD3D006BFB61 /* Frameworks */,
@@ -83,25 +92,25 @@
             attributes = {
                 LastUpgradeCheck = 1600;
             };
-            buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */;
+            buildConfigurationList = 1D6058900D05DD3D006BFB64 /* Build configuration list for PBXProject */;
             compatibilityVersion = "Xcode 15.0";
             developmentRegion = en;
             knownRegions = (
                 en,
             );
-            mainGroup = 1D6058900D05DD3D006BFB57;
+            mainGroup = 1D6058900D05DD3D006BFB58;
             targets = (
-                1D6058900D05DD3D006BFB58 /* ShakeFlashlightWidgetApp */,
+                1D6058900D05DD3D006BFB63 /* ShakeFlashlightWidgetApp */,
             );
         };
         /* End PBXProject section */
 
         /* Begin XCConfigurationList section */
-        1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */ = {
+        1D6058900D05DD3D006BFB64 /* Build configuration list for PBXProject */ = {
             isa = XCConfigurationList;
             buildConfigurations = (
-                1D6058900D05DD3D006BFB5B /* Debug */,
-                1D6058900D05DD3D006BFB5C /* Release */,
+                1D6058900D05DD3D006BFB65 /* Debug */,
+                1D6058900D05DD3D006BFB66 /* Release */,
             );
             defaultConfigurationIsVisible = 0;
             defaultConfigurationName = Debug;
@@ -109,43 +118,44 @@
         /* End XCConfigurationList section */
 
         /* Begin XCBuildConfiguration section */
-        1D6058900D05DD3D006BFB5B /* Debug */ = {
+        1D6058900D05DD3D006BFB65 /* Debug */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
                 PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
                 CODE_SIGN_IDENTITY = "";
                 CODE_SIGN_STYLE = Automatic;
                 DEVELOPMENT_TEAM = "YOUR_TEAM_ID";
-                IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
                 GCC_PREPROCESSOR_DEFINITIONS = (
                     "DEBUG=1",
                     "$(inherited)",
                 );
-                INFOPLIST_FILE = AppDelegate/Info.plist;
+                INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
-                SWIFT_VERSION = 5.0; // Set to supported version
-                ALWAYS_SEARCH_USER_PATHS = NO; // Set to NO
+                SWIFT_VERSION = 5.0;
+                ALWAYS_SEARCH_USER_PATHS = NO;
             };
             name = Debug;
         };
-        1D6058900D05DD3D006BFB5C /* Release */ = {
+        1D6058900D05DD3D006BFB66 /* Release */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
                 PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
                 CODE_SIGN_IDENTITY = "";
                 CODE_SIGN_STYLE = Automatic;
                 DEVELOPMENT_TEAM = "YOUR_TEAM_ID";
-                IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-                INFOPLIST_FILE = AppDelegate/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
-                SWIFT_VERSION = 5.0; // Set to supported version
-                ALWAYS_SEARCH_USER_PATHS = NO; // Set to NO
+                SWIFT_VERSION = 5.0;
+                ALWAYS_SEARCH_USER_PATHS = NO;
             };
             name = Release;
         };
         /* End XCBuildConfiguration section */
+
     };
 
     rootObject = 1D6058900D05DD3D006BFB54 /* Project object */;
