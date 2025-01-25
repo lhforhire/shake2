@@ -29,8 +29,6 @@
     <key>UISupportedInterfaceOrientations</key>
     <array>
         <string>UIInterfaceOrientationPortrait</string>
-        <string>UIInterfaceOrientationLandscapeLeft</string>
-        <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
     <key>NSCameraUsageDescription</key>
     <string>This app needs access to the camera to control the flashlight.</string>
