@@ -151,6 +151,8 @@
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                SWIFT_VERSION = 5.0;
             };
             name = Debug;
         };
@@ -165,6 +167,8 @@
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                SWIFT_VERSION = 5.0;
             };
             name = Release;
         };
