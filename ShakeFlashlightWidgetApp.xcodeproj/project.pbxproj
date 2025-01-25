@@ -10,10 +10,6 @@
             isa = PBXBuildFile;
             fileRef = 1D6058900D05DD3D006BFB56 /* AppDelegate.swift */;
         };
-        2D1234560A06AB7F00123DEF /* ViewController.swift */ = {
-            isa = PBXBuildFile;
-            fileRef = 2D1234560A06AB7F00123DEF /* ViewController.swift */;
-        };
         /* End PBXBuildFile section */
 
         /* Begin PBXFileReference section */
@@ -23,18 +19,6 @@
             path = AppDelegate.swift;
             sourceTree = "<group>";
         };
-        2D1234560A06AB7F00123DEF /* ViewController.swift */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = ViewController.swift;
-            sourceTree = "<group>";
-        };
-        3A4567890B07CD8E00145ABC /* Info.plist */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = text.plist.xml;
-            path = Info.plist;
-            sourceTree = "<group>";
-        };
         /* End PBXFileReference section */
 
         /* Begin PBXGroup section */
@@ -42,27 +26,24 @@
             isa = PBXGroup;
             children = (
                 1D6058900D05DD3D006BFB56 /* AppDelegate.swift */,
-                2D1234560A06AB7F00123DEF /* ViewController.swift */,
-                3A4567890B07CD8E00145ABC /* Info.plist */,
             );
             sourceTree = "<group>";
         };
         /* End PBXGroup section */
 
         /* Begin PBXSourcesBuildPhase section */
-        1D6058900D05DD3D006BFB5D /* Sources */ = {
+        1D6058900D05DD3D006BFB60 /* Sources */ = {
             isa = PBXSourcesBuildPhase;
             buildActionMask = 2147483647;
             files = (
                 1D6058900D05DD3D006BFB55 /* AppDelegate.swift */,
-                2D1234560A06AB7F00123DEF /* ViewController.swift */,
             );
             runOnlyForDeploymentPostprocessing = 0;
         };
         /* End PBXSourcesBuildPhase section */
 
         /* Begin PBXFrameworksBuildPhase section */
-        1D6058900D05DD3D006BFB5E /* Frameworks */ = {
+        1D6058900D05DD3D006BFB61 /* Frameworks */ = {
             isa = PBXFrameworksBuildPhase;
             buildActionMask = 2147483647;
             files = (
@@ -72,11 +53,10 @@
         /* End PBXFrameworksBuildPhase section */
 
         /* Begin PBXResourcesBuildPhase section */
-        1D6058900D05DD3D006BFB5F /* Resources */ = {
+        1D6058900D05DD3D006BFB62 /* Resources */ = {
             isa = PBXResourcesBuildPhase;
             buildActionMask = 2147483647;
             files = (
-                3A4567890B07CD8E00145ABC /* Info.plist */,
             );
             runOnlyForDeploymentPostprocessing = 0;
         };
@@ -87,9 +67,9 @@
             isa = PBXNativeTarget;
             buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXNativeTarget */;
             buildPhases = (
-                1D6058900D05DD3D006BFB5D /* Sources */,
-                1D6058900D05DD3D006BFB5E /* Frameworks */,
-                1D6058900D05DD3D006BFB5F /* Resources */,
+                1D6058900D05DD3D006BFB60 /* Sources */,
+                1D6058900D05DD3D006BFB61 /* Frameworks */,
+                1D6058900D05DD3D006BFB62 /* Resources */,
             );
             name = ShakeFlashlightWidgetApp;
             productName = ShakeFlashlightWidgetApp;
@@ -101,7 +81,7 @@
         1D6058900D05DD3D006BFB54 /* Project object */ = {
             isa = PBXProject;
             attributes = {
-                LastUpgradeCheck = 1602;
+                LastUpgradeCheck = 1600;
             };
             buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */;
             compatibilityVersion = "Xcode 15.0";
@@ -141,7 +121,7 @@
                     "DEBUG=1",
                     "$(inherited)",
                 );
-                INFOPLIST_FILE = Info.plist;
+                INFOPLIST_FILE = AppDelegate/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
             };
@@ -155,7 +135,7 @@
                 CODE_SIGN_STYLE = Automatic;
                 DEVELOPMENT_TEAM = "YOUR_TEAM_ID";
                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-                INFOPLIST_FILE = Info.plist;
+                INFOPLIST_FILE = AppDelegate/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
             };
