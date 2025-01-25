@@ -3,9 +3,9 @@ workflows:
     name: Build Unsigned iOS App for AltStore
     environment:
       vars:
-        PROJECT_NAME: "ShakeFlashlightWidgetApp"
+        PROJECT_NAME: "Shake2"
         SCHEME: "ShakeFlashlightWidgetApp"
-        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj" # Updated path
+        PROJECT_PATH: "Shake2.xcodeproj" # Updated project name and path
     scripts:
       - name: Check project file
         script: |
@@ -36,7 +36,7 @@ workflows:
           fi
           xcodebuild -exportArchive \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            -exportOptionsPlist exportOptions.plist \
+            -exportOptionsPlist shake2/exportOptions.plist \ # Corrected path for exportOptions.plist
             -exportPath $CM_BUILD_DIR/ExportedProducts || { echo "Error: Export failed."; exit 1; }
     artifacts:
       - $CM_BUILD_DIR/ExportedProducts/*.ipa
