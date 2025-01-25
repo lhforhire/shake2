@@ -91,7 +91,7 @@
                 INFOPLIST_FILE = AppDelegate/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
-            };
+            };ShakeFlashlight/Info.plist
             name = Debug;
         };
         1D6058900D05DD3D006BFB5C /* Release */ = {
