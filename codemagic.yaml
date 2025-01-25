@@ -10,6 +10,7 @@ workflows:
       - name: Clean and prepare the project
         script: |
           # Clean previous builds and derived data
+          rm -rf $HOME/Library/Developer/Xcode/DerivedData
           xcodebuild clean -project ${PROJECT_NAME}.xcodeproj
       - name: Build the app for iOS Simulator
         script: |
@@ -21,6 +22,13 @@ workflows:
             -configuration Debug \
             -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
             clean build | tee build.log
+      - name: Verify build output
+        script: |
+          # Ensure the app build output exists
+          if [ ! -d "$HOME/Library/Developer/Xcode/DerivedData" ]; then
+            echo "Build output not found! Check for errors in build.log."
+            exit 1
+          fi
     artifacts:
       - build.log                                  # Save build logs for debugging
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/Products/Debug-iphonesimulator/*.app
