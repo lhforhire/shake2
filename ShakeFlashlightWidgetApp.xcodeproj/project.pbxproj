@@ -88,7 +88,7 @@
                     "DEBUG=1",
                     "$(inherited)",
                 );
-                INFOPLIST_FILE = AppDelegate/Info.plist
+                INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
             };ShakeFlashlight/Info.plist
