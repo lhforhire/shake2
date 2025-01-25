@@ -37,6 +37,9 @@ workflows:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
             archive || { echo "Error: Archive failed."; exit 1; }
+      - name: Remove app name from development assets
+        script: |
+          plutil -remove ':assets:developmentAssets:0:appName' $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive/Info.plist || echo "No app name found under development assets."
       - name: List archive contents
         script: |
           echo "Listing contents of $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive:"
