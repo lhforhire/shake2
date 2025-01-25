@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
     <key>method</key>
-    <string>debugging</string>
+    <string>development</string> <!-- Use 'development' for unsigned builds -->
     <key>signingStyle</key>
     <string>manual</string>
     <key>stripSwiftSymbols</key>
     <true/>
     <key>compileBitcode</key>
     <false/>
-    <key>Petro_Team</key>
-    <string></string>
+    <key>teamID</key>
+    <string></string> <!-- Leave blank or specify a valid Team ID -->
 </dict>
 </plist>
