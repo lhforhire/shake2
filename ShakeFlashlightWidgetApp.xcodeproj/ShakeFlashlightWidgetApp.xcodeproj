@@ -36,7 +36,10 @@
             isa = PBXNativeTarget;
             buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXNativeTarget */;
             buildPhases = (
-);
+                1D6058900D05DD3D006BFB60 /* Sources */,
+                1D6058900D05DD3D006BFB61 /* Frameworks */,
+                1D6058900D05DD3D006BFB62 /* Resources */,
+            );
             name = ShakeFlashlightWidgetApp;
             productName = ShakeFlashlightWidgetApp;
             productType = "com.apple.product-type.application";
@@ -81,7 +84,7 @@
                 PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
                 CODE_SIGN_IDENTITY = "";
                 CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = "";
+                DEVELOPMENT_TEAM = "YOUR_TEAM_ID";
                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
                 GCC_PREPROCESSOR_DEFINITIONS = (
                     "DEBUG=1",
@@ -99,7 +102,7 @@
                 PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
                 CODE_SIGN_IDENTITY = "";
                 CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = "";
+                DEVELOPMENT_TEAM = "YOUR_TEAM_ID";
                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
                 INFOPLIST_FILE = AppDelegate/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
