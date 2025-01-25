@@ -1,50 +1,39 @@
 workflows:
-  ios_device_build:  # Workflow name defined here
-    name: Build iOS App for Physical Device
+  ios_altstore_unsigned_build:
+    name: Build Unsigned iOS App for AltStore
     environment:
       vars:
         PROJECT_NAME: "ShakeFlashlightWidgetApp"  # Replace with your project name
         SCHEME: "ShakeFlashlightWidgetApp"        # Replace with your scheme name
-      xcode: latest                               # Use the latest Xcode version
+      xcode: latest
     scripts:
-      - name: Clean and prepare the project
+      - name: Clean the project
         script: |
-          # Clean previous builds and derived data
-          rm -rf $CM_BUILD_DIR/DerivedData
           xcodebuild clean -project ${PROJECT_NAME}.xcodeproj
       - name: Archive the app
         script: |
-          # Archive the app for physical devices
           xcodebuild \
             -project ${PROJECT_NAME}.xcodeproj \
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            archive | tee archive.log
-      - name: Export the .ipa file
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            archive
+      - name: Export the unsigned .ipa file
         script: |
-          # Create export options for the .ipa file
-          echo '<?xml version="1.0" encoding="UTF-8"?>
-          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0">
-          <dict>
-            <key>method</key>
-            <string>development</string> <!-- Use "development" for free accounts -->
-            <key>teamID</key>
-            <string>YOUR_TEAM_ID</string> <!-- Replace with your Apple Developer Team ID -->
-            <key>signingStyle</key>
-            <string>automatic</string>
-            <key>compileBitcode</key>
-            <false/>
-          </dict>
-          </plist>' > exportOptions.plist
-          # Export the .ipa file
           xcodebuild -exportArchive \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            -exportOptionsPlist exportOptions.plist \
-            -exportPath $CM_BUILD_DIR/ExportedProducts | tee export.log
+            -exportPath $CM_BUILD_DIR/ExportedProducts \
+            -exportOptionsPlist <(echo '<?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+            <plist version="1.0">
+            <dict>
+                <key>method</key>
+                <string>ad-hoc</string>
+            </dict>
+            </plist>')
     artifacts:
-      - archive.log                                # Log of the archive process
-      - export.log                                 # Log of the export process
-      - $CM_BUILD_DIR/ExportedProducts/*.ipa       # The generated .ipa file
+      - $CM_BUILD_DIR/ExportedProducts/*.ipa
