@@ -11,6 +11,6 @@
     <key>compileBitcode</key>
     <false/>
     <key>teamID</key>
-    <string>1234567890</string> <!-- Add your Team ID here, or leave empty for unsigned builds -->
+    <string></string>
 </dict>
 </plist>
