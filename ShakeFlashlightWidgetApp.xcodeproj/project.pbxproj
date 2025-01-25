@@ -1,36 +1,37 @@
 1D6058900D05DD3D006BFB5B /* Debug */ = {
     isa = XCBuildConfiguration;
     buildSettings = {
-        PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp"; // Ensure this matches your app bundle identifier
-        CODE_SIGN_STYLE = Manual; // Switch to Manual if no automated signing is used
-        CODE_SIGN_IDENTITY = ""; // Leave empty if signing is not required
-        DEVELOPMENT_TEAM = ""; // Empty for personal/local builds
-        IPHONEOS_DEPLOYMENT_TARGET = 15.0; // Ensure the target version is correct
+        PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp"; // Matches app bundle identifier
+        CODE_SIGN_STYLE = Manual; // Manual signing style for local builds
+        CODE_SIGN_IDENTITY = ""; // No code signing for local builds
+        DEVELOPMENT_TEAM = ""; // Leave empty for local builds
+        IPHONEOS_DEPLOYMENT_TARGET = 15.0; // Target iOS 15
         GCC_PREPROCESSOR_DEFINITIONS = (
             "DEBUG=1",
             "$(inherited)",
         );
-        INFOPLIST_FILE = "ShakeFlashlight/Info.plist"; // Ensure the path is correct
+        INFOPLIST_FILE = "ShakeFlashlight/Info.plist"; // Path to the Info.plist
         PRODUCT_NAME = "$(TARGET_NAME)";
-        SDKROOT = iphoneos16.0; // Ensure the SDK version is compatible
-        SWIFT_VERSION = 5.0; // Explicitly specify the Swift version
-        EXCLUDED_ARCHS = "i386 x86_64"; // Exclude simulator architectures
+        SDKROOT = iphoneos16.0; // Compatible SDK version for Xcode 15
+        SWIFT_VERSION = 5.0; // Explicit Swift version declaration
+        EXCLUDED_ARCHS = "i386 x86_64"; // Exclude unsupported simulator architectures
     };
     name = Debug;
 };
+
 1D6058900D05DD3D006BFB5C /* Release */ = {
     isa = XCBuildConfiguration;
     buildSettings = {
-        PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp"; // Ensure this matches your app bundle identifier
-        CODE_SIGN_STYLE = Manual; // Switch to Manual if no automated signing is used
-        CODE_SIGN_IDENTITY = ""; // Leave empty if signing is not required
-        DEVELOPMENT_TEAM = ""; // Empty for personal/local builds
-        IPHONEOS_DEPLOYMENT_TARGET = 15.0; // Ensure the target version is correct
-        INFOPLIST_FILE = "ShakeFlashlight/Info.plist"; // Ensure the path is correct
+        PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp"; // Matches app bundle identifier
+        CODE_SIGN_STYLE = Manual; // Manual signing style for release builds
+        CODE_SIGN_IDENTITY = ""; // No code signing for local builds
+        DEVELOPMENT_TEAM = ""; // Leave empty for local builds
+        IPHONEOS_DEPLOYMENT_TARGET = 15.0; // Target iOS 15
+        INFOPLIST_FILE = "ShakeFlashlight/Info.plist"; // Path to the Info.plist
         PRODUCT_NAME = "$(TARGET_NAME)";
-        SDKROOT = iphoneos16.0; // Ensure the SDK version is compatible
-        SWIFT_VERSION = 5.0; // Explicitly specify the Swift version
-        EXCLUDED_ARCHS = "i386 x86_64"; // Exclude simulator architectures
+        SDKROOT = iphoneos16.0; // Compatible SDK version for Xcode 15
+        SWIFT_VERSION = 5.0; // Explicit Swift version declaration
+        EXCLUDED_ARCHS = "i386 x86_64"; // Exclude unsupported simulator architectures
     };
     name = Release;
 };
