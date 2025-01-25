@@ -12,6 +12,7 @@ workflows:
           if [ ! -f $PROJECT_PATH/project.pbxproj ]; then
             echo "Error: Project file $PROJECT_PATH not found."
             exit 1
+          fi
       - name: Clean the project
         script: |
           xcodebuild clean -project $PROJECT_PATH || echo "Warning: Clean failed, continuing build."
