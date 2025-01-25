@@ -5,7 +5,7 @@ workflows:
       vars:
         PROJECT_NAME: "ShakeFlashlightWidgetApp"
         SCHEME: "ShakeFlashlightWidgetApp"
-        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj/project.pbxproj"
+        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj"
     scripts:
       - name: Set Xcode version
         script: |
@@ -17,7 +17,7 @@ workflows:
           ls -R
       - name: Check project file
         script: |
-          if [ ! -f $PROJECT_PATH ]; then
+          if [ ! -f $PROJECT_PATH/project.pbxproj ]; then
             echo "Error: Project file $PROJECT_PATH not found."
             exit 1
           fi
@@ -27,11 +27,11 @@ workflows:
           plutil -lint exportOptions.plist
       - name: Clean the project
         script: |
-          xcodebuild clean -project ShakeFlashlightWidgetApp.xcodeproj
+          xcodebuild clean -project $PROJECT_PATH
       - name: Build the app
         script: |
           xcodebuild \
-            -project ShakeFlashlightWidgetApp.xcodeproj \
+            -project $PROJECT_PATH \
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
@@ -40,7 +40,7 @@ workflows:
       - name: Archive the app
         script: |
           xcodebuild \
-            -project ShakeFlashlightWidgetApp.xcodeproj \
+            -project $PROJECT_PATH \
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
