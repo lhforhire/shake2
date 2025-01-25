@@ -36,13 +36,13 @@
         1D6058900D05DD3D006BFB66 /* Main.storyboard */ = {
             isa = PBXFileReference;
             lastKnownFileType = file.storyboard;
-            path = Main.storyboard;
+            path = ShakeFlashlight/Main.storyboard; /* Updated to include directory */
             sourceTree = "<group>";
         };
         1D6058900D05DD3D006BFB67 /* Info.plist */ = {
             isa = PBXFileReference;
             lastKnownFileType = text.plist.xml;
-            path = Info.plist;
+            path = ShakeFlashlight/Info.plist; /* Updated to include directory */
             sourceTree = "<group>";
         };
         /* End PBXFileReference section */
