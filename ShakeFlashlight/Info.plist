@@ -7,7 +7,7 @@
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
-    <string>com.example.shakeflashlight</string>
+    <string>com.example.shakeflashlight</string> <!-- Update this to your bundle identifier -->
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
@@ -21,16 +21,16 @@
     <key>LSRequiresIPhoneOS</key>
     <true/>
     <key>UILaunchStoryboardName</key>
-    <string>Main</string>
+    <string>Main</string> <!-- Ensure "Main.storyboard" is included in the project -->
     <key>UIRequiredDeviceCapabilities</key>
     <array>
-        <string>arm64</string>
+        <string>arm64</string> <!-- Ensure the app supports only modern devices -->
     </array>
     <key>UISupportedInterfaceOrientations</key>
     <array>
-        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationPortrait</string> <!-- Supports portrait mode -->
     </array>
     <key>NSCameraUsageDescription</key>
-    <string>This app needs access to the camera to control the flashlight.</string>
+    <string>This app needs access to the camera to control the flashlight.</string> <!-- Ensure this is accurate -->
 </dict>
 </plist>
