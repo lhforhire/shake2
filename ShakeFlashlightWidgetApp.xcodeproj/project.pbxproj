@@ -78,10 +78,10 @@
         1D6058900D05DD3D006BFB5B /* Debug */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
-                PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
+                PRODUCT_BUNDLE_IDENTIFIER = "com.example.shakeflashlight"; /* Updated */
                 CODE_SIGN_IDENTITY = "";
                 CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = "";
+                DEVELOPMENT_TEAM = ""; /* Add your Team ID here */
                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
                 GCC_PREPROCESSOR_DEFINITIONS = (
                     "DEBUG=1",
@@ -96,12 +96,12 @@
         1D6058900D05DD3D006BFB5C /* Release */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
-                PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
+                PRODUCT_BUNDLE_IDENTIFIER = "com.example.shakeflashlight"; /* Updated */
                 CODE_SIGN_IDENTITY = "";
                 CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = "";
+                DEVELOPMENT_TEAM = ""; /* Add your Team ID here */
                 IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-                INFOPLIST_FILE = ShakeFlashlight/Info.plist; /* Updated path */
+                INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
             };
