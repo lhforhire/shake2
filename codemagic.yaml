@@ -10,7 +10,7 @@ workflows:
       - name: Clean and prepare the project
         script: |
           # Clean previous builds and derived data
-          rm -rf $CM_BUILD_DIR/DerivedData
+          rm -rf /Users/builder/clone/DerivedData
           xcodebuild clean -project ${PROJECT_NAME}.xcodeproj
       - name: Build the app for iOS Simulator
         script: |
@@ -21,18 +21,18 @@ workflows:
             -sdk iphonesimulator \
             -configuration Debug \
             -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
-            -derivedDataPath $CM_BUILD_DIR/DerivedData \
+            -derivedDataPath /Users/builder/clone/DerivedData \
             clean build | tee build.log
-      - name: Verify DerivedData contents
+      - name: Check DerivedData contents
         script: |
-          # Check if the DerivedData directory contains the expected build output
-          if [ -d "$CM_BUILD_DIR/DerivedData" ]; then
-            echo "DerivedData directory found:"
-            ls -R $CM_BUILD_DIR/DerivedData
+          # List contents of DerivedData to confirm .app creation
+          if [ -d "/Users/builder/clone/DerivedData" ]; then
+            echo "DerivedData directory contents:"
+            find /Users/builder/clone/DerivedData -name "*.app" || echo "No .app file found"
           else
-            echo "DerivedData directory is missing! Check build log for issues."
+            echo "DerivedData directory does not exist."
             exit 1
           fi
     artifacts:
       - build.log                                  # Save build logs for debugging
-      - $CM_BUILD_DIR/DerivedData/Build/Products/Debug-iphonesimulator/*.app
+      - /Users/builder/clone/DerivedData/Build/Products/Debug-iphonesimulator/*.app
