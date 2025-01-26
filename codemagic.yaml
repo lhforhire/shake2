@@ -45,6 +45,9 @@ workflows:
             -sdk iphoneos \
             -configuration Release \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
             archive || { echo "Error: Archive failed."; exit 1; }
       - name: Export the unsigned .ipa file
         script: |
