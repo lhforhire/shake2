@@ -1,3 +1,4 @@
+
 // !$*UTF8*$!
 {
     archiveVersion = 1;
@@ -6,9 +7,17 @@
     objects = {
 
         /* Begin PBXBuildFile section */
-        1D6058900D05DD3D006BFB55 /* BuildFile */ = {
+        1D6058900D05DD3D006BFB55 /* AppDelegate.swift */ = {
             isa = PBXBuildFile;
             fileRef = 1D6058900D05DD3D006BFB56 /* AppDelegate.swift */;
+        };
+        1D6058900D05DD3D006BFB63 /* ViewController.swift */ = {
+            isa = PBXBuildFile;
+            fileRef = 1D6058900D05DD3D006BFB64 /* ViewController.swift */;
+        };
+        1D6058900D05DD3D006BFB65 /* Main.storyboard */ = {
+            isa = PBXBuildFile;
+            fileRef = 1D6058900D05DD3D006BFB66 /* Main.storyboard */;
         };
         /* End PBXBuildFile section */
 
@@ -16,7 +25,25 @@
         1D6058900D05DD3D006BFB56 /* AppDelegate.swift */ = {
             isa = PBXFileReference;
             lastKnownFileType = sourcecode.swift;
-            path = ShakeFlashlight/AppDelegate.swift;
+            path = AppDelegate.swift;
+            sourceTree = "<group>";
+        };
+        1D6058900D05DD3D006BFB64 /* ViewController.swift */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = ViewController.swift;
+            sourceTree = "<group>";
+        };
+        1D6058900D05DD3D006BFB66 /* Main.storyboard */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = file.storyboard;
+            path = ShakeFlashlight/Main.storyboard;
+            sourceTree = "<group>";
+        };
+        1D6058900D05DD3D006BFB67 /* Info.plist */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.plist.xml;
+            path = ShakeFlashlight/Info.plist;
             sourceTree = "<group>";
         };
         /* End PBXFileReference section */
@@ -26,41 +53,13 @@
             isa = PBXGroup;
             children = (
                 1D6058900D05DD3D006BFB56 /* AppDelegate.swift */,
+                1D6058900D05DD3D006BFB64 /* ViewController.swift */,
+                1D6058900D05DD3D006BFB66 /* Main.storyboard */,
+                1D6058900D05DD3D006BFB67 /* Info.plist */,
             );
             sourceTree = "<group>";
         };
         /* End PBXGroup section */
-
-        /* Begin PBXSourcesBuildPhase section */
-        1D6058900D05DD3D006BFB60 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                1D6058900D05DD3D006BFB55 /* AppDelegate.swift */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        /* End PBXSourcesBuildPhase section */
-
-        /* Begin PBXFrameworksBuildPhase section */
-        1D6058900D05DD3D006BFB61 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        /* End PBXFrameworksBuildPhase section */
-
-        /* Begin PBXResourcesBuildPhase section */
-        1D6058900D05DD3D006BFB62 /* Resources */ = {
-            isa = PBXResourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        /* End PBXResourcesBuildPhase section */
 
         /* Begin PBXNativeTarget section */
         1D6058900D05DD3D006BFB58 /* ShakeFlashlightWidgetApp */ = {
@@ -81,7 +80,7 @@
         1D6058900D05DD3D006BFB54 /* Project object */ = {
             isa = PBXProject;
             attributes = {
-                LastUpgradeCheck = 1600;
+                LastUpgradeCheck = 1500;
             };
             buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */;
             compatibilityVersion = "Xcode 15.0";
@@ -95,6 +94,38 @@
             );
         };
         /* End PBXProject section */
+
+        /* Begin PBXSourcesBuildPhase section */
+        1D6058900D05DD3D006BFB60 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                1D6058900D05DD3D006BFB55 /* AppDelegate.swift */,
+                1D6058900D05DD3D006BFB63 /* ViewController.swift */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        /* End PBXSourcesBuildPhase section */
+
+        /* Begin PBXFrameworksBuildPhase section */
+        1D6058900D05DD3D006BFB61 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = ();
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        /* End PBXFrameworksBuildPhase section */
+
+        /* Begin PBXResourcesBuildPhase section */
+        1D6058900D05DD3D006BFB62 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                1D6058900D05DD3D006BFB65 /* Main.storyboard */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        /* End PBXResourcesBuildPhase section */
 
         /* Begin XCConfigurationList section */
         1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */ = {
@@ -112,8 +143,11 @@
         1D6058900D05DD3D006BFB5B /* Debug */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
-                PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
-                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                PRODUCT_BUNDLE_IDENTIFIER = "com.example.shakeflashlight";
+                CODE_SIGN_STYLE = Manual;
+                CODE_SIGN_IDENTITY = "";
+                CODE_SIGNING_REQUIRED = NO;
+                CODE_SIGNING_ALLOWED = NO;
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
@@ -124,8 +158,11 @@
         1D6058900D05DD3D006BFB5C /* Release */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
-                PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
-                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                PRODUCT_BUNDLE_IDENTIFIER = "com.example.shakeflashlight";
+                CODE_SIGN_STYLE = Manual;
+                CODE_SIGN_IDENTITY = "";
+                CODE_SIGNING_REQUIRED = NO;
+                CODE_SIGNING_ALLOWED = NO;
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
@@ -138,4 +175,6 @@
     };
 
     rootObject = 1D6058900D05DD3D006BFB54 /* Project object */;
+}
+
 }
