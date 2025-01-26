@@ -35,11 +35,4 @@ workflows:
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
-            -derivedDataPath $CM_BUILD_DIR/DerivedData \
-            build || { echo "Error: Build failed."; exit 1; }
-      - name: Archive the app
-        script: |
-          xcodebuild \
-            -project $PROJECT_PATH \
-            -scheme ${SCHEME} \
-            -sdk
+            -derivedData
