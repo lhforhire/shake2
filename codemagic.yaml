@@ -35,4 +35,29 @@ workflows:
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
-            -derivedData
+            -derivedDataPath $CM_BUILD_DIR/DerivedData \
+            build || { echo "Error: Build failed."; exit 1; }
+      - name: Archive the app
+        script: |
+          xcodebuild \
+            -project $PROJECT_PATH \
+            -scheme ${SCHEME} \
+            -sdk iphoneos \
+            -configuration Release \
+            -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            archive || { echo "Error: Archive failed."; exit 1; }
+      - name: Export the unsigned .ipa file
+        script: |
+          if [ ! -d $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive ]; then
+            echo "Error: Archive not found at $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive."
+            exit 1
+          fi
+          xcodebuild -exportArchive \
+            -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
+            -exportOptionsPlist exportOptions.plist \
+            -exportPath $CM_BUILD_DIR/ExportedProducts || { echo "Error: Export failed."; exit 1; }
+    artifacts:
+      - $CM_BUILD_DIR/ExportedProducts/*.ipa
