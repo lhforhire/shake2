@@ -1,60 +1,141 @@
-workflows:
-  ios_altstore_unsigned_build:
-    name: Build Unsigned iOS App for AltStore
-    environment:
-      vars:
-        PROJECT_NAME: "ShakeFlashlightWidgetApp"
-        SCHEME: "ShakeFlashlightWidgetApp"
-        PROJECT_PATH: "ShakeFlashlightWidgetApp.xcodeproj"
-    scripts:
-      - name: Set Xcode version
-        script: |
-          sudo xcode-select -s /Applications/Xcode-16.2.app/Contents/Developer
-          xcodebuild -version
-      - name: Debug project directory
-        script: |
-          echo "Checking current directory and files:"
-          ls -R
-      - name: Check project file
-        script: |
-          if [ ! -f $PROJECT_PATH/project.pbxproj ]; then
-            echo "Error: Project file $PROJECT_PATH not found."
-            exit 1
-          fi
-      - name: Validate plist files
-        script: |
-          plutil -lint ShakeFlashlightWidgetApp/Info.plist
-          plutil -lint exportOptions.plist
-      - name: Clean the project
-        script: |
-          xcodebuild clean -project $PROJECT_PATH
-      - name: Build the app
-        script: |
-          xcodebuild \
-            -project $PROJECT_PATH \
-            -scheme ${SCHEME} \
-            -sdk iphoneos \
-            -configuration Release \
-            -derivedDataPath $CM_BUILD_DIR/DerivedData \
-            build || { echo "Error: Build failed."; exit 1; }
-      - name: Archive the app
-        script: |
-          xcodebuild \
-            -project $PROJECT_PATH \
-            -scheme ${SCHEME} \
-            -sdk iphoneos \
-            -configuration Release \
-            -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            archive || { echo "Error: Archive failed."; exit 1; }
-      - name: Export the unsigned .ipa file
-        script: |
-          if [ ! -d $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive ]; then
-            echo "Error: Archive not found at $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive."
-            exit 1
-          fi
-          xcodebuild -exportArchive \
-            -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            -exportOptionsPlist exportOptions.plist \
-            -exportPath $CM_BUILD_DIR/ExportedProducts || { echo "Error: Export failed."; exit 1; }
-    artifacts:
-      - $CM_BUILD_DIR/ExportedProducts/*.ipa
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 56;
+    objects = {
+
+        /* Begin PBXBuildFile section */
+        1D6058900D05DD3D006BFB55 /* BuildFile */ = {
+            isa = PBXBuildFile;
+            fileRef = 1D6058900D05DD3D006BFB56 /* AppDelegate.swift */;
+        };
+        /* End PBXBuildFile section */
+
+        /* Begin PBXFileReference section */
+        1D6058900D05DD3D006BFB56 /* AppDelegate.swift */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = ShakeFlashlight/AppDelegate.swift;
+            sourceTree = "<group>";
+        };
+        /* End PBXFileReference section */
+
+        /* Begin PBXGroup section */
+        1D6058900D05DD3D006BFB57 /* MainGroup */ = {
+            isa = PBXGroup;
+            children = (
+                1D6058900D05DD3D006BFB56 /* AppDelegate.swift */,
+            );
+            sourceTree = "<group>";
+        };
+        /* End PBXGroup section */
+
+        /* Begin PBXSourcesBuildPhase section */
+        1D6058900D05DD3D006BFB60 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                1D6058900D05DD3D006BFB55 /* AppDelegate.swift */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        /* End PBXSourcesBuildPhase section */
+
+        /* Begin PBXFrameworksBuildPhase section */
+        1D6058900D05DD3D006BFB61 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        /* End PBXFrameworksBuildPhase section */
+
+        /* Begin PBXResourcesBuildPhase section */
+        1D6058900D05DD3D006BFB62 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        /* End PBXResourcesBuildPhase section */
+
+        /* Begin PBXNativeTarget section */
+        1D6058900D05DD3D006BFB58 /* ShakeFlashlightWidgetApp */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXNativeTarget */;
+            buildPhases = (
+                1D6058900D05DD3D006BFB60 /* Sources */,
+                1D6058900D05DD3D006BFB61 /* Frameworks */,
+                1D6058900D05DD3D006BFB62 /* Resources */,
+            );
+            name = ShakeFlashlightWidgetApp;
+            productName = ShakeFlashlightWidgetApp;
+            productType = "com.apple.product-type.application";
+        };
+        /* End PBXNativeTarget section */
+
+        /* Begin PBXProject section */
+        1D6058900D05DD3D006BFB54 /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                LastUpgradeCheck = 1600;
+            };
+            buildConfigurationList = 1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */;
+            compatibilityVersion = "Xcode 15.0";
+            developmentRegion = en;
+            knownRegions = (
+                en,
+            );
+            mainGroup = 1D6058900D05DD3D006BFB57;
+            targets = (
+                1D6058900D05DD3D006BFB58 /* ShakeFlashlightWidgetApp */,
+            );
+        };
+        /* End PBXProject section */
+
+        /* Begin XCConfigurationList section */
+        1D6058900D05DD3D006BFB59 /* Build configuration list for PBXProject */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                1D6058900D05DD3D006BFB5B /* Debug */,
+                1D6058900D05DD3D006BFB5C /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        /* End XCConfigurationList section */
+
+        /* Begin XCBuildConfiguration section */
+        1D6058900D05DD3D006BFB5B /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                INFOPLIST_FILE = ShakeFlashlight/Info.plist;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SDKROOT = iphoneos;
+                SWIFT_VERSION = 5.0;
+            };
+            name = Debug;
+        };
+        1D6058900D05DD3D006BFB5C /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ShakeFlashlightWidgetApp";
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                INFOPLIST_FILE = ShakeFlashlight/Info.plist;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SDKROOT = iphoneos;
+                SWIFT_VERSION = 5.0;
+            };
+            name = Release;
+        };
+        /* End XCBuildConfiguration section */
+
+    };
+
+    rootObject = 1D6058900D05DD3D006BFB54 /* Project object */;
+}
