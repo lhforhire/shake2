@@ -9,7 +9,7 @@ workflows:
     scripts:
       - name: Set Xcode version
         script: |
-          sudo xcode-select -s $(xcode-select -p)
+          sudo xcode-select -s /Applications/Xcode-16.2.app/Contents/Developer
           xcodebuild -version
       - name: Debug project directory
         script: |
@@ -23,45 +23,31 @@ workflows:
           fi
       - name: Validate plist files
         script: |
-          plutil -lint ShakeFlashlight/Info.plist
+          plutil -lint ShakeFlashlightWidgetApp/Info.plist
           plutil -lint exportOptions.plist
-      - name: Clear Derived Data
-        script: |
-          rm -rf ~/Library/Developer/Xcode/DerivedData
       - name: Clean the project
         script: |
           xcodebuild clean -project $PROJECT_PATH
       - name: Build the app
         script: |
-          # Replace DEVELOPMENT_TEAM with a dummy or valid Team ID
           xcodebuild \
             -project $PROJECT_PATH \
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
             -derivedDataPath $CM_BUILD_DIR/DerivedData \
-            DEVELOPMENT_TEAM="1234567890" \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
             build || { echo "Error: Build failed."; exit 1; }
       - name: Archive the app
         script: |
-          # Replace DEVELOPMENT_TEAM with a dummy or valid Team ID
           xcodebuild \
             -project $PROJECT_PATH \
             -scheme ${SCHEME} \
             -sdk iphoneos \
             -configuration Release \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
-            DEVELOPMENT_TEAM="1234567890" \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
             archive || { echo "Error: Archive failed."; exit 1; }
       - name: Export the unsigned .ipa file
         script: |
-          mkdir -p $CM_BUILD_DIR/ExportedProducts
           if [ ! -d $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive ]; then
             echo "Error: Archive not found at $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive."
             exit 1
@@ -69,9 +55,6 @@ workflows:
           xcodebuild -exportArchive \
             -archivePath $CM_BUILD_DIR/${PROJECT_NAME}.xcarchive \
             -exportOptionsPlist exportOptions.plist \
-            -exportPath $CM_BUILD_DIR/ExportedProducts \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO || { echo "Error: Export failed."; exit 1; }
+            -exportPath $CM_BUILD_DIR/ExportedProducts || { echo "Error: Export failed."; exit 1; }
     artifacts:
       - $CM_BUILD_DIR/ExportedProducts/*.ipa
