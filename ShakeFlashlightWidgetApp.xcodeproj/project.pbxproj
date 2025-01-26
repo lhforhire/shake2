@@ -143,10 +143,6 @@
             isa = XCBuildConfiguration;
             buildSettings = {
                 PRODUCT_BUNDLE_IDENTIFIER = "com.example.shakeflashlight";
-                CODE_SIGN_STYLE = Manual;
-                CODE_SIGN_IDENTITY = "";
-                CODE_SIGNING_REQUIRED = NO;
-                CODE_SIGNING_ALLOWED = NO;
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
@@ -158,10 +154,6 @@
             isa = XCBuildConfiguration;
             buildSettings = {
                 PRODUCT_BUNDLE_IDENTIFIER = "com.example.shakeflashlight";
-                CODE_SIGN_STYLE = Manual;
-                CODE_SIGN_IDENTITY = "";
-                CODE_SIGNING_REQUIRED = NO;
-                CODE_SIGNING_ALLOWED = NO;
                 INFOPLIST_FILE = ShakeFlashlight/Info.plist;
                 PRODUCT_NAME = "$(TARGET_NAME)";
                 SDKROOT = iphoneos;
@@ -174,6 +166,4 @@
     };
 
     rootObject = 1D6058900D05DD3D006BFB54 /* Project object */;
-}
-
 }
