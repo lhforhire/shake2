@@ -10,7 +10,5 @@
     <true/>
     <key>compileBitcode</key>
     <false/>
-    <key>teamID</key>
-    <string>teamID</string> <!-- Leave blank or specify a valid Team ID -->
 </dict>
 </plist>
